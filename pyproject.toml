@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "dnevnikru-bot"
+version = "0.1.0"
+description = ""
+authors = ["jieggii <jieggii.contact@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+betterconf = "^2.6.1"
+aiohttp = "^3.8.0"
+vkwave = {git = "https://github.com/fscdev/vkwave.git", rev = "4f5c0bd"}
+pydnevnikruapi = {git = "https://github.com/kesha1225/DnevnikRuAPI.git", rev = "c630392"}
+python-dateutil = "^2.8.2"
+python-dotenv = {extras = ["cli"], version = "^0.19.1"}
+
+[tool.poetry.dev-dependencies]
+isort = "^5.10.0"
+black = "^21.10b0"
+flake8 = "^4.0.1"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
