@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "dnevnikru-bot"
 version = "0.1.0"
-description = ""
+description = "Селфхостед VK бот для вашей классной беседы, работающий с API dnevnik.ru"
 authors = ["jieggii <jieggii.contact@gmail.com>"]
 license = "MIT"
 
