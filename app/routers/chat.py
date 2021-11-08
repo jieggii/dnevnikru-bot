@@ -36,10 +36,10 @@ async def handle_help(event: BotEvent):
     event = SimpleBotEvent(event)
     await event.answer(
         "Список моих команд:\n"
-        "/help -- получить список команд\n"
-        "/ht -- получить список ДЗ\n"
-        "/today -- получить расписание на сегодня\n"
-        "/tomorrow -- получить расписание на завтра\n"
+        "/help -- список команд\n"
+        "/ht -- список ДЗ\n"
+        "/today -- расписание на сегодня\n"
+        "/tomorrow -- расписание на завтра\n"
     )
 
 

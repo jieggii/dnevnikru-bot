@@ -49,8 +49,6 @@ class CommandsFilter(BaseCommandsFilter):
 class OnlyMentionMe(BaseFilter):
     async def check(self, event) -> FilterResult:
         text = get_text(event)
-        print(text)
-        print(get_my_mention())
         if text:
             if text == get_my_mention():
                 return FilterResult(True)

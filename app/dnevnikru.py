@@ -1,13 +1,10 @@
-import logging
 from datetime import datetime, timedelta
-from typing import Dict
+from typing import Dict, List
 
 from dateutil import parser
 from pydnevnikruapi.aiodnevnik import dnevnik
 
 from app.config import config
-
-logger = logging.getLogger(__name__)
 
 
 class Timetable:
@@ -45,7 +42,7 @@ class DnevnikRu:
         time = datetime.today() + timedelta(days=1)
         return await self._get_timetable(start_time=time, end_time=time)
 
-    async def get_hometasks(self):
+    async def get_hometasks(self) -> List[Hometask]:
         start_time = datetime.today()
         end_date = start_time + timedelta(weeks=3)
 
@@ -65,10 +62,10 @@ class DnevnikRu:
         for lesson in lessons:
             kv_lessons.update({lesson["id"]: lesson["date"]})
 
-        home_tasks = []
+        hometasks = []
 
         for work in works:
-            home_tasks.append(
+            hometasks.append(
                 Hometask(
                     subject=kv_subjects[work["subjectId"]],
                     task=work["text"],
@@ -76,7 +73,7 @@ class DnevnikRu:
                 )
             )
 
-        return home_tasks
+        return hometasks
 
 
 dnevnikru = DnevnikRu(
