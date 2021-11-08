@@ -29,7 +29,6 @@ class DnevnikRu:
         self.password = password
         self.edu_group = edu_group
         self.client = dnevnik.AsyncDiaryAPI(login=login, password=password)
-        logger.info("Test")
 
     async def _get_timetable(self, start_time: datetime, end_time: datetime) -> Timetable:
         lessons = await self.client.get_group_lessons_info(
@@ -69,7 +68,6 @@ class DnevnikRu:
         home_tasks = []
 
         for work in works:
-            print(kv_lessons[work["lesson"]])
             home_tasks.append(
                 Hometask(
                     subject=kv_subjects[work["subjectId"]],

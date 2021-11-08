@@ -1,0 +1,7 @@
+.env.example
+.flake8
+.gitignore
+.git
+LICENSE
+Makefile
+README.md
